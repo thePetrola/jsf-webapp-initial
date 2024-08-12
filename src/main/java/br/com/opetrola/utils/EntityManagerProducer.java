@@ -11,16 +11,16 @@ import javax.persistence.Persistence;
 @ApplicationScoped
 public class EntityManagerProducer {
 
-    EntityManagerFactory factory;
+    EntityManagerFactory emf;
 
     public EntityManagerProducer() {
-        this.factory = Persistence.createEntityManagerFactory("baseUnitPU");
+        this.emf = Persistence.createEntityManagerFactory("baseUnitPU");
     }
 
     @Produces
     @RequestScoped
     public EntityManager getEntityManager() {
-        return factory.createEntityManager();
+        return emf.createEntityManager();
     }
 
     public void close(@Disposes EntityManager em) {

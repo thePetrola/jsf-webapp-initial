@@ -1,5 +1,6 @@
 package br.com.opetrola.utils;
 
+import javax.annotation.Priority;
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
